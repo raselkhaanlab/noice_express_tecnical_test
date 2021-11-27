@@ -22,7 +22,7 @@ app.get('/value',(req,res)=>{
         popularity[key[0]] = 1;
     }
 
-    if(!values[key]) {
+    if(!values[key[0]]) {
 
             // get the values current length
         let length = Object.keys(values).length;
@@ -56,7 +56,7 @@ app.get('/value',(req,res)=>{
     }
 
     let returnObject = {
-        [key]: values[key]
+        [key[0]]: values[key[0]]
     }
     
     return res.json(returnObject);
